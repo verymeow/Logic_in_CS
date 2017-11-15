@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head> </head>
+<body> 
+	<h1> INDEX </h1>
+		<h3> Classes </h3>
+			<ol> 
+				<li> <a href="Tree_node.html">class Tree_node </a>   </li>
+				<li> <a href="Node_of_stack.html">class Node_of_stack</a> </li>
+				<li> <a href="Tree.html">class Tree </a> </li>
+			</ol>		
+		<h3> Global Functions </h3>
+			<ol> 
+				<li> void giveAnswer() 
+					<p>It runs in O(n), where n is the size of the input expression.</p>	
+				</li>
+				<li> int isOperand(char element) 
+					<p>Returns 1 if current character is not ~,+,*,>,) or(.</p>		
+				</li>
+				<li> int isOperator(char element)
+					<p>Returns 1 if current character is an operator, i.e. ~,+,* or>.</p>		
+				</li>
+				<li> int isOpeningBracket(char element) 
+					<p>Returns 1 if current element is (.</p>
+				</li>
+				<li> int isClosingBracket(char element) 
+					<p>Returns 1 if current element is ).</p>
+				</li>
+				<li> void push(char element) 
+					<p>Pushes element onto stack. </p>
+				</li>
+				<li> void pop() 
+					<p>Pops top element from stack. </p>
+				</li>
+				<li> char top() 
+					<p>Shows top element of stack. </p>
+				</li>
+				<li> void reverses(char arr1[100], char arr2[100]) 
+					<ul>
+						<li>Copies arr1 in reverse to arr2, and reverses parentheses.</li>
+						<li>It runs in O(n), where n is the size of the string to be reversed.</li>
+					</ul>					
+				</li>
+				<li> int emptys() 
+					<p>Returns 1 if stack is empty, 0 otherwise. </p>
+				</li>
+				<li> int precedence(char elem) 
+					<p>Returns precedence values of operators. </p>
+				</li>
+				<li>void impl_free(Tree_node* hav)
+					<ul>
+						<li>It removes "implication" operator from the logic statements. </li>
+						<li>It runs in O(n), since it traverse the whole tree and modifies it whenever it encounters "implication" operator. </li>
+					</ul>
+				</li>
+				<li> void nnf(Tree_node* hav)
+					<ul>
+						<li>It brings the "impl-free" logic statement into Negation Normal form.</li>
+						<li>It runs in O(n) as it traverses the whole tree and modifies it so that it conforms to NNF.</li>
+					</ul>
+				</li>
+				<li> void cnf(Tree_node* hav)
+					<ul>
+						<li>It finally converts the "nnf" logic expression to its correct Conjunctive Normal Form. </li>
+						<li>It runs in O(n) as it traverses the whole tree and suitably modifies it so that it conforms to cnf. </li>
+					</ul>
+				</li>
+				<li> void distr(Tree_node* has)
+					<ul>
+						<li>It is an auxiliary function for "cnf" that is called by it for conversion of expression to cnf. </li>
+						<li>It runs in O(n) and distributes "+" over "*" and vice versa as it encounters them on the tree. </li>
+					</ul>
+				</li>
+				<li> int check_validity(void)
+					<ul>
+						<li>It checks validity of the generated cnf form. It returns 1 if the expression is valid, 0 otherwise. </li>
+						<li>It essentially runs in O(n) as it traverses the string once and stores the results for later in an array so that they can be looked up in constant time. </li>
+					</ul>
+				</li>
+			</ol>
+		<h3><a href="space complexity.html">Space Complexity</a></h3>	
+</body>

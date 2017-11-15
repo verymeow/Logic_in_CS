@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head> <h1> Class Variables and Methods:Tree </h1> </head>
+<body>
+	<p><strong>This will be the stack where nodes parsed from input will be stacked. Will become final output tree.</strong></p>
+	<h3>VARIABLES</h3>
+	<ol><li> Node_of_stack* top </li></ol>
+	<h3>METHODS</h3>
+	<ol>
+		<li>Tree() 
+			<p>Constructor</p>
+		</li>
+		<li>void push(Tree_node* new_node)
+			<p>This pushes a new Node_of_stack onto the stack of nodes.</p>
+		</li>
+		<li>Tree_node* pop()
+			<p>This pops out the top Node_of_stack from the stack.</p>
+		</li>
+		<li>Tree_node* tops()
+			<p>Returns pointer to top node of current stack.</p>
+		</li>
+		<li>void append(char elem)
+			<p>Adds the parsed element from prefix string to the tree.</p>
+		</li>
+		<li>int evaluate()
+			<p>Function for user to evaluate expression, no parameters for method.</p>
+		</li>
+		<li>int evaluates(Tree_node* k)
+			<ul>
+				<li>Method for internal computation, has a node as a method.</li>
+				<li>Since it eventually reaches all nodes it must run in O(n), where n is the number of nodes in the tree.</li>
+				<li>It traverses left side depth first till it reaches the bottom the tree after which it backtracks.</li>
+			</ul>
+		</li>
+		<li>int convert_to_int(char elem)
+			<p>Converts digit character to integer.</p>
+		</li>
+		<li>void make_tree(string prefix)
+			<ul>
+				<li>Parses the string and makes the tree.</li>
+				<li>Calls append method "n" times, where n is the length of input string.</li>
+				<li>Since "append" for a character runs in constant time we can say that make_tree runs in O(n).</li>
+			</ul>
+		</li>
+		<li>void infix()
+			<p>Gets the infix expression.</p>
+		</li>
+		<li>void in_ord_trav(Tree_node* m)
+			<ul>
+				<li>Traverses the tree in order to get the infix expression.</li>
+				<li>It runs in O(n) since each node needs to be traversed.</li>
+			</ul>
+		</li>
+		<li>int height()
+			<p>User friendly method for height.</p>
+		</li>
+		<li>int heights(Tree_node*a)
+			<ul>			
+				<li>Calculates height of tree recursively</li>
+				<li>Recursive call goes log(n) deep where n is the no. of nodes.</li>
+			</ul>
+		</li>
+		
+	</ol>
+</body>

@@ -1,0 +1,48 @@
+MODULE main
+VAR
+	p : boolean;
+	q : boolean;
+	r : boolean;
+	state : {state0, state1, state2};
+ASSIGN
+	init(state) := state0;
+	next(state)  := 
+	case
+		state = state0 : {state1, state2};
+		state = state1 : {state0, state1};
+		state = state2 : state2;
+	esac;
+	p := 
+	case
+		state = state0 : TRUE;
+		state = state1 : FALSE;
+		state = state2 : FALSE;
+	esac;
+	q := 
+	case
+		state = state0 : TRUE;
+		state = state1 : TRUE;
+		state = state2 : FALSE;
+	esac;
+	r := 
+	case
+		state = state0 : FALSE;
+		state = state1 : TRUE;
+		state = state2 : TRUE;
+	esac;
+LTLSPEC 
+	state = state0 -> ( p & q )
+LTLSPEC 
+	state = state0 -> ( !r )
+LTLSPEC 
+	state = state0 -> ( X r )
+LTLSPEC 
+	state = state0 -> ( X( q & r ) )
+LTLSPEC 
+	state = state0 -> ( G!( p & r ) )
+LTLSPEC 
+	state = state2 -> ( G r )
+LTLSPEC 
+	( state = state0 | state = state1 | state = state2 ) -> ( F( ! q & r ) -> F G r )
+LTLSPEC
+	( state = state0 ) -> ( G F p -> G F r )

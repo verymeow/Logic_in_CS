@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+	<h2>Space Complexity</h2>
+		<ul>
+			<li>All the data structures that are used for computations are declared globally at the start.</li>
+			<li>Their size is linear in the no. of characters in input expressions.</li>
+			<li>Important global variables are:
+				<ol>
+					<li>infix[100] : contains initial input.</li>
+					<li>answer[100] : contains final answer.</li>
+					<li>stack_arr[100] : contains stack used for computing the prefix.</li>
+					<li>cnf_exp : contains a string obtained by in-order traversal of cnf tree, minus the brackets. </li>
+				</ol>
+			</li>
+			<li> All functions used for CNF computation use a tree of original expression, which they then modify by adding a node or two. Their space complexity is essentially linear in size of input expression.</li>
+		</ul>
+</body>
